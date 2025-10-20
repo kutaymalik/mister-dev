@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mister-dev"
+version = "0.1.0"
+description = "Mister Dev - your all-in-one developer assistant"
+authors = [{ name = "Kutay Malik TATAS" }]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+mr = "mister_dev.__main__:main"
+

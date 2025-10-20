@@ -1,0 +1,48 @@
+Metadata-Version: 2.4
+Name: mister-dev
+Version: 0.1.0
+Summary: Mister Dev - your all-in-one developer assistant
+Author: Kutay Malik TATAS
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# Mister Dev (CLI) — `mr`
+
+Your all‑in‑one developer assistant for **Jira briefs**, **commit messages**, **PR descriptions**, **code review notes**, and **daily summaries**.
+
+## Quick Start
+
+```bash
+# 1) Create & activate a venv (recommended)
+python3 -m venv .venv && source .venv/bin/activate
+
+# 2) Install deps
+pip install -r requirements.txt
+
+# 3) Configure OpenAI (either env var or config file)
+export OPENAI_API_KEY=sk-...  # preferred
+# OR create ~/.mister-dev/config.json with: {"model": "gpt-4o-mini"}
+
+# 4) Run commands
+python -m mister_dev brief "CMR dosyası yeniden yüklendiğinde hata yönetimi eklenecek"
+python -m mister_dev commit    # after staging changes with: git add .
+```
+
+### Optional: Shell Alias
+
+```bash
+alias mr="python -m mister_dev"
+# Usage: mr brief "..." ; mr commit ; mr review ; mr summary
+```
+
+## Commands
+
+- `mr brief "<TR summary>"` → English **Jira title + description + acceptance criteria + checklist + labels + suggested branch**
+- `mr commit` → **Conventional commit** + **Jira comment draft** from `git diff --cached`
+- `mr review` → Lightweight **code quality** hints (naming, null‑checks, async suffix) — *starter*
+- `mr pr` → **PR title/description** template — *starter*
+- `mr summary [--today|--week]` → **Daily/weekly summary** from commits — *starter*
+
+## Notes
+- Mister Dev expects an **OpenAI API key** in `OPENAI_API_KEY` (recommended) or a config file at `~/.mister-dev/config.json` with at least a `"model"` value. Environment variable takes precedence.
+- By default the model is `gpt-4o-mini`. You can change it via env `MR_MODEL` or config.

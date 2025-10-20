@@ -1,0 +1,2 @@
+[console_scripts]
+mr = mister_dev.__main__:main
