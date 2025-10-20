@@ -16,7 +16,7 @@ export OPENAI_API_KEY=sk-...  # preferred
 # OR create ~/.mister-dev/config.json with: {"model": "gpt-4o-mini"}
 
 # 4) Run commands
-python -m mister_dev brief "CMR dosyası yeniden yüklendiğinde hata yönetimi eklenecek"
+python -m mister_dev brief "X dosyası yeniden yüklendiğinde hata yönetimi eklenecek"
 python -m mister_dev commit    # after staging changes with: git add .
 ```
 
