@@ -32,6 +32,7 @@ alias mr="python -m mister_dev"
 - `mr brief "<TR summary>"` → English **Jira title + description + acceptance criteria + checklist + labels + suggested branch**
 - `mr commit` → **Conventional commit** + **Jira comment draft** from `git diff --cached`
 - `mr review` → Lightweight **code quality** hints (naming, null‑checks, async suffix) — *starter*
+- `mr lint` → Pre-commit guard with quick local checks for staged changes — *starter*
 - `mr pr` → **PR title/description** template — *starter*
 - `mr summary [--today|--week]` → **Daily/weekly summary** from commits — *starter*
 
